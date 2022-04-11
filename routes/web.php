@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
+});
+
+Route::get('/notas', function() {
+    return "listado de notas";
+});
+
+Route::get('/notas/crear', function(){
+    return "crear nuevas notas";
 });
