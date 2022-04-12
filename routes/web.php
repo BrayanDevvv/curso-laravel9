@@ -18,11 +18,13 @@ Route::get('/', function () {
 });
 
 Route::get('/notas', function() {
-    return "listado de notas";
+    //No es necesario colocar la ruta de la vista, pues laravel espera que las vistas esten siempre en resources/views
+    // Entonces solo le pongo el nombre de la vista, ni tampoco es necesario la extension de la vista :D
+    return view('notes');
 });
 
 Route::get('/notas/crear', function(){
-    return "crear nuevas notas";
+    return view('add-notes');
 });
 
 
