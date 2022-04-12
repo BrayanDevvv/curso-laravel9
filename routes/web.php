@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -24,3 +24,10 @@ Route::get('/notas', function() {
 Route::get('/notas/crear', function(){
     return "crear nuevas notas";
 });
+
+
+// -------------------Ruta dinamica ----------------------------
+Route::get('/notas/{id}/editar', function($id){
+    return "editar nota:" . $id;
+    // el where siguiente indica que id recibe solo numeros (\d+ <-- esta es una expresion regular) 
+})->where ('id', '\d+');
