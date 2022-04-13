@@ -24,7 +24,7 @@ Route::get('/notas', function() {
 });
 
 Route::get('/notas/crear', function(){
-    return view('add-notes');
+    return view('add-note');
 });
 
 
