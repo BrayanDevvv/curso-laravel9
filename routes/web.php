@@ -13,14 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/notas', function() {
-    //No es necesario colocar la ruta de la vista, pues laravel espera que las vistas esten siempre en resources/views
+
+Route::get('/', function() {
+    // cuando retorno una vista, no es necesario colocar la ruta a la carpea de la vista, pues laravel espera que las vistas esten siempre en resources/views
     // Entonces solo le pongo el nombre de la vista, ni tampoco es necesario la extension de la vista :D
-    return view('notes');
+    $notes = [
+        'Primera nota', 'Segunda nota', 'TErcera nota', 'Cuarta nota', 'Quinta nota','contenido_prueba'
+    ];
+
+
+    return view('notes')->with('notes', $notes);
 });
 
 Route::get('/notas/crear', function(){
