@@ -35,14 +35,18 @@
 
                 <div class="card card-small">
                     <div class="card-body">
-                        <h4> @php
-                            echo $note;
-                        @endphp </h4>
+                        <h4> 
+                             {{-- htmlentities es una forma de asegurar que si alguien intentan obtener datos del sistema por medio de scripts, no pueda, pues htmlentities convierte todo en entidades html. o tambien se puede dar solucion a esto con: "{{}}" que es nativo de blade. al usar {{}} no necesito el echo --}}
+
+                            {{-- echo htmlentities($note); --}}
+                            {{$note}}
+                        </h4>
 
                         <p>
-                            @php
-                            echo array_search('contenido', $notes);
-                            @endphp
+                            
+                            {{-- echo htmlentities($note); --}}
+                            {{$note}}
+                            
                         </p>
                     </div>
 
